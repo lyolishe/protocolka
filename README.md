@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# Protokolka
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Приложение для ведения протокола встречи, разработанное с использованием React и TypeScript. Позволяет пользователям добавлять, редактировать и удалять записи, а также сохранять их в локальном хранилище браузера.
 
-## Available Scripts
+## Функциональность
 
-In the project directory, you can run:
+- Добавление записей с помощью текстового ввода.
+- Отображение списка записей с отметкой времени.
+- Редактирование записей прямо в строке.
+- Удаление отдельных записей.
+- Удаление всех записей разом.
+- Сохранение записей в локальном хранилище при перезагрузке страницы.
 
-### `npm start`
+## Установка
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Для запуска приложения на вашем компьютере выполните следующие шаги:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Убедитесь, что у вас установлен [Node.js](https://nodejs.org/).
+2. Клонируйте репозиторий:
+```bash
+git clone https://github.com/ваш-логин/meeting-notes.git
+```
+3. Перейдите в директорию проекта:
+```bash
+cd meeting-notes
+```
+4. Установите зависимости:
+```bash
+npm install
+```
+5. Запустите приложение:
+```bash
+npm start
+```
+## Использование
 
-### `npm test`
+- Введите текст записи в текстовое поле внизу страницы и нажмите Enter, чтобы добавить запись в список.
+- Чтобы редактировать запись, нажмите кнопку "Редактировать" рядом с ней.
+- Чтобы сохранить изменения, нажмите кнопку "Сохранить" или просто выйдите из текстового поля.
+- Для удаления записи нажмите кнопку "Удалить" рядом с ней.
+- Для удаления всех записей одновременно нажмите кнопку "Удалить все записи".
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Технологии
 
-### `npm run build`
+- [React](https://react.dev/) 
+- [TypeScript](https://www.typescriptlang.org/)
+- [CSS](https://www.w3schools.com/css/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Лицензия
+Этот проект лицензирован на условиях MIT License. См. файл LICENSE для получения подробной информации.
