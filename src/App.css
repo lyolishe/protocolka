@@ -50,6 +50,13 @@
 }
 
 .list__itemEdit {
+  display: block;
+  height: 32px;
+  background-color: #111126;
+  color: white;
+  outline: none;
+  border-radius: 6px;
+  font-size: 18px;
 
 }
 
@@ -62,10 +69,7 @@
   color: white;
   outline: none;
   border-radius: 6px;
-  margin-top: auto;
-  margin-bottom: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: auto 10px 20px;
 }
 
 .input::placeholder {
