@@ -3,28 +3,71 @@
 }
 
 .App {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #111126;
+  color: white;
+  font-size: 18px;
 }
 
-h1 {
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-ul {
+.header__button {
+  width: 36px;
+  height: 36px;
+  background-color: antiquewhite;
+  border: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   list-style-type: none;
   padding: 0;
 }
 
-li {
+.list__item {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  border-bottom: 2px solid orange;
 }
 
-button {
+
+.list__itemButton {
+  width: 36px;
+  height: 36px;
+  background-color: antiquewhite;
+  border: none;
+}
+
+.list__itemEdit {
+
+}
+
+.input {
+  display: block;
+  height: 32px;
+  font-size: 20px;
+  background-color: #111126;
+  border-color: orange;
+  color: white;
+  outline: none;
+  border-radius: 6px;
+  margin-top: auto;
+  margin-bottom: 20px;
   margin-left: 10px;
+  margin-right: 10px;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
 }

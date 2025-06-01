@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import './App.css';
+import {DeleteIcon} from "./icons/DeleteIcon";
+import {CopyIcon} from "./icons/CopyIcon";
 
 interface Note {
   id: number;
@@ -78,13 +80,30 @@ const App: React.FC = () => {
     setNotes([]);
   };
 
+  const handleCopyAll = () => {
+    const allNotesText = notes.map(note => `${note.time}: ${note.text}`).join('\n');
+    navigator.clipboard.writeText(allNotesText).then(() => {
+      alert('Все записи скопированы в буфер обмена!');
+    }).catch(err => {
+      console.error('Ошибка при копировании: ', err);
+    });
+  };
+
   return (
       <div className="App">
-        <h1>Протокол встречи</h1>
-        <ul>
+        <div className="header">
+          <h1>Протокол встречи</h1>
+          <button onClick={handleDeleteAll} className="header__button">
+            <DeleteIcon/>
+          </button>
+          <button onClick={handleCopyAll} className="header__button">
+            <CopyIcon/>
+          </button>
+        </div>
+        <ul className="list">
           {notes.map(note => (
-              <li key={note.id}>
-                <span>{note.time}: </span>
+              <li key={note.id} className={"list__item"}>
+                <span >{note.time} </span>
                 {editingNoteId === note.id ? (
                   <input
                       type="text"
@@ -93,13 +112,14 @@ const App: React.FC = () => {
                       onBlur={() => handleSaveEdit(note.id)}
                       onKeyPress={(e) => onKeyPressEdit(e, note.id)}
                       autoFocus
+                      className={'list__itemEdit'}
                   />
                 ) : (
                   <>
-                    <span onClick={() => handleEdit(note.id)}>{note.text}</span>
+                    <span  onClick={() => handleEdit(note.id)}>{note.text}</span>
                   </>
                 )}
-                <button onClick={() => handleDelete(note.id)}>Удалить</button>
+                <button className={"list__itemButton"} onClick={() => handleDelete(note.id)}><DeleteIcon/></button>
               </li>
           ))}
         </ul>
@@ -109,10 +129,8 @@ const App: React.FC = () => {
             onChange={handleInputChange}
             onKeyPress={handleKeyPress}
             placeholder="Введите запись и нажмите Enter"
+            className={'input'}
         />
-        <button onClick={handleDeleteAll} style={{ marginTop: '10px' }}>
-          Удалить все записи
-        </button>
       </div>
   );
 };
