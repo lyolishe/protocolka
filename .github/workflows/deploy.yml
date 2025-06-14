@@ -3,10 +3,20 @@ name: Deploy Frontend to Server
 on:
   push:
     branches: [ "main" ]  # Запускать при пуше в main
-
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Выберите среду (production/staging)"
+        required: true
+        default: "production"
+        type: choice
+        options:
+          - production
+          - staging
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
 
     steps:
       - name: Checkout code
