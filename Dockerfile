@@ -2,7 +2,7 @@
 FROM nginx:alpine
 
 # Копируем собранные файлы фронтенда в Nginx
-COPY ./dist /usr/share/nginx/html
+COPY ./build /usr/share/nginx/html
 
 # (Опционально) Заменяем дефолтный конфиг Nginx, если нужны особые настройки
 COPY nginx.conf /etc/nginx/conf.d/default.conf
